@@ -1,0 +1,15 @@
+.mobile-dropdown {
+    top: 100%;
+    animation: drop 700ms both;
+}
+
+@keyframes drop {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
