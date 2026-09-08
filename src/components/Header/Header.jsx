@@ -16,7 +16,7 @@ function DropDown() {
                 <div key={l.title}>
                     {l.link
                         ? <Link key={l.title} href={l.link} className="py-2 px-4 font-bold border-b flex items-center justify-between pr-2">{l.title}</Link>
-                        : <div className="py-2 px-4 font-bold border-b flex items-center justify-between pr-2">{l.title}
+                        : <div className="py-2 px-4 font-bold border-b flex items-center justify-between pr-2" key={l.title}>{l.title}
                             <span onClick={() => setOpen(p => !p)}>{l.children && <ArrowDown />}</span>
                         </div>}
                     {open && (
