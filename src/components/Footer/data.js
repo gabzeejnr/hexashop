@@ -29,7 +29,7 @@ const UL = ["Useful Links", [
     },
     {
         title: "Contact Us",
-        link: "/contact-us"
+        link: "/contact"
     }
 ]]
 const HI = ["Help & Information", [

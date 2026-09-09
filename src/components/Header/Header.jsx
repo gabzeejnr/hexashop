@@ -11,12 +11,12 @@ function DropDown() {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className={`${styles["mobile-dropdown"]} flex flex-col bg-transparent backdrop-blur-sm py-1 transition-all duration-700`}>
+        <div className={`${styles["mobile-dropdown"]} flex flex-col bg-background py-1 transition-all duration-700`}>
             {li.map(l => (
                 <div key={l.title}>
                     {l.link
-                        ? <Link key={l.title} href={l.link} className="py-2 px-4 font-bold border-b flex items-center justify-between pr-2">{l.title}</Link>
-                        : <div className="py-2 px-4 font-bold border-b flex items-center justify-between pr-2" key={l.title}>{l.title}
+                        ? <Link key={l.title} href={l.link} className={`py-2 px-4 font-bold  flex items-center justify-between pr-2`}>{l.title}</Link>
+                        : <div className="py-2 px-4 font-bold flex items-center justify-between pr-2" key={l.title}>{l.title}
                             <span onClick={() => setOpen(p => !p)}>{l.children && <ArrowDown />}</span>
                         </div>}
                     {open && (
@@ -45,9 +45,16 @@ export default function Header() {
                     {li.map(l => (
                         l.link
                             ? <Link key={l.title} href={l.link}>{l.title}</Link>
-                            : <span className="inline-flex items-center gap-1">{l.title}
-                                <span><ArrowDown size={15} /></span>
-                            </span>
+                            : <div key={l.title} className="relative flex flex-col">
+                                <button className={` ${styles["sub-drop-wrapper"]} inline-flex items-center gap-1 cursor-pointer`}>
+                                    {l.title}<span>&darr;</span>
+                                </button>
+                                <div className={`${styles["sub-drop"]} absolute flex top-8 bg-background w-50 overflow-hidden flex-col text-black`}>
+                                    {l.children.map((q, i) => <Link href={q.link} key={q.title} className={`py-1 px-3 ${!(i + 1 === l.children.length) ? "border-b" : ""}`}>
+                                        <div className="hover:scale-105 hover:translate-x-5">{q.title}</div>
+                                    </Link>)}
+                                </div>
+                            </div>
                     ))}
                 </div>
                 <button className="text-4xl cursor-pointer lg:hidden text-background" onClick={() => setOpen(p => !p)}

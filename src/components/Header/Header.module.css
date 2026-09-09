@@ -1,15 +1,24 @@
 .mobile-dropdown {
-    top: 100%;
-    animation: drop 700ms both;
+    position: relative;
+    animation: drop 200ms both;
+}
+
+.sub-drop{
+    display: none;
+}
+.sub-drop-wrapper:active .sub-drop {
+    display: block;
+    transform: scale(3);
 }
 
 @keyframes drop {
     from {
-        top: 0;
+        top: 2rem;
         opacity: 0;
     }
 
     to {
+        top: 0;
         opacity: 1;
     }
 }

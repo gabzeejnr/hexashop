@@ -2,6 +2,8 @@ import womens from "../assets/images/womens-bg.jpg";
 import mens from "../assets/images/mens-bg.jpg";
 import kids from "../assets/images/kids-bg.jpg";
 import accessories from "../assets/images/accessries-bg.jpg";
+import error from "../assets/images/error/error-bg.jpg";
+import error2 from "../assets/images/error/images (2).png"
 
 
 const i_m = [
@@ -31,4 +33,6 @@ const i_m = [
     }
 ];
 
-export { i_m }
+const imageSlides = [womens, mens, kids, accessories, error, error2]
+
+export { i_m, imageSlides }

@@ -36,7 +36,7 @@ export default function Footer() {
         <footer className="bg-black flex flex-col gap-15 text-white text-center py-10">
             <div className="flex flex-col md:flex-row md:justify-between md:px-10 items-center gap-10">
                 <TopFooter />
-                <div className="grid items-center grid-cols-2 md:grid-cols-3 gap-10">
+                <div className="grid items-center grid-cols-2 sm:grid-cols-3 gap-10">
                     {footerLinks.map(f => (
                         <FooterLink title={f[0]} key={f[0]} arr={f[1]} />
                     ))}
