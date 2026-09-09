@@ -30,13 +30,13 @@ export default function SlideShow() {
                     return setInitial(0);
                 }} />
             </div>
-            <div className="flex justify-between items-center gap-5 md:hidden">
+            <div className="flex justify-between items-center gap-5 md:hidden px-3">
                 <Button value="&#x3c;" onClick={() => {
                     if (initial === 0) return setInitial(i.length - 1);
                     return setInitial(p => p - 1);
                 }} />
                 <div className={`${styles["mobile-slide"]} block md:hidden h-80 max-w-100`}>
-                    <Image src={i[initial]} alt="Slide Show content" className="object-cover h-full" />
+                    <Image src={i[initial]} alt="Slide Show content" className="object-cover h-full w-auto" />
                 </div>
                 <Button value="&#x3e;" onClick={() => {
                     if (initial === (i.length - 1)) return setInitial(0);

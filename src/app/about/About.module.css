@@ -1,0 +1,18 @@
+.about-hero {
+    background: url("../../assets/images/about/about-us-page-heading.jpg") center / cover no-repeat;
+}
+
+.round-icon {
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round-icon:hover {
+    background: rgb(94, 93, 93);
+}
