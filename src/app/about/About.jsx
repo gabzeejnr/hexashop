@@ -7,13 +7,13 @@ import Link from "next/link";
 
 export default function About() {
     return (
-        <section className="flex flex-col lg:flex-row gap-5">
+        <section className="flex flex-col lg:flex-row gap-15">
             <div className="left flex-1">
                 <Image src={leftImage} alt="About Left Image" className="w-full h-auto" />
             </div>
-            <div className="right flex-1">
-                <div className="mb-5">
-                    <h3 className="mb-4 text-4xl font-bold">About Us & Our Skills</h3>
+            <div className="right flex-1 flex flex-col justify-center">
+                <div className="mb-10 border-b">
+                    <h3 className="mb-10 text-4xl font-bold">About Us & Our Skills</h3>
                     <p className="text-gray-400 mb-4 font-semibold italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore.</p>
                     <div className="quote flex gap-2 mb-4">
                         <span className={`inline-flex text-6xl select-none before:content-[""]`}></span>

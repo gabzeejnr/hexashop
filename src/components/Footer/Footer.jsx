@@ -25,7 +25,7 @@ function LowerFooter() {
     return (
         <div className="pt-10 text-center mx-5 border-t border-t-white text-[15px]">
             <p className="block">Copyright &copy; {year} {brandName} All Rights Reserved.</p>
-            <p className="block">Design: <a href="https://github.com/gabzeejnr" target="_blank" className="text-teal-300 hover:text-teal-500 font-semibold transition-all">Gabriel Dodowei</a></p>
+            <p className="block">Design: <a href="https://gabrieldodowei.vercel.app" target="_blank" className="text-teal-300 hover:text-teal-500 font-semibold transition-all">Gabriel Dodowei</a></p>
         </div>
     )
 }

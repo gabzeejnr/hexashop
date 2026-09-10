@@ -4,7 +4,7 @@ import Button from "../components/Button";
 export default function C({ img, title, sub, text }) {
     return (
         <div className="hi h-70 lg:h-auto relative text-background"> {/*  h-90 lg:h-60 xl:h-80 2xl:h-100 */}
-            <Image src={img} alt={title} fill className="object-cover" />
+            <Image src={img} alt={title} fill sizes="auto" className="object-cover" />
             <div className="absolute w-full h-full flex flex-col items-center justify-center gap-3 z-1">
                 <span className="text-3xl font-bold tracking-[1px]">{title}</span>
                 <span className="italic text-[17px]">{sub}</span>

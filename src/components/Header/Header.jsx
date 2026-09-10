@@ -1,12 +1,12 @@
 "use client"
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowDown } from "lucide-react";
+import { Menu, X, ArrowUp, ArrowDown } from "lucide-react";
 import { brandLogo } from "../../data/companyData";
 import { li } from "./data";
-import styles from "./Header.module.css"
+import styles from "./Header.module.css";
 
-function DropDown() {
+function DropDown({ onClick }) {
 
     const [open, setOpen] = useState(false);
 
@@ -15,14 +15,14 @@ function DropDown() {
             {li.map(l => (
                 <div key={l.title}>
                     {l.link
-                        ? <Link key={l.title} href={l.link} className={`py-2 px-4 font-bold  flex items-center justify-between pr-2`}>{l.title}</Link>
+                        ? <Link key={l.title} href={l.link} className={`py-2 px-4 font-bold  flex items-center justify-between pr-2`} onClick={onClick}>{l.title}</Link>
                         : <div className="py-2 px-4 font-bold flex items-center justify-between pr-2" key={l.title}>{l.title}
-                            <span onClick={() => setOpen(p => !p)}>{l.children && <ArrowDown />}</span>
+                            <span onClick={() => setOpen(p => !p)}>{l.children && (open ? <ArrowUp /> : <ArrowDown />)}</span>
                         </div>}
                     {open && (
                         <div className="flex flex-col">
                             {l.children?.map(q => (
-                                <Link href={q.link} key={q.title} className="py-2 font-light px-6">{q.title}</Link>
+                                <Link href={q.link} key={q.title} className="py-2 font-light px-6" onClick={onClick}>{q.title}</Link>
                             ))}
                         </div>
                     )}
@@ -36,6 +36,10 @@ export default function Header() {
 
     const size = 30;
     const [open, setOpen] = useState(false);
+
+    function closeHeader() {
+        setOpen(false);
+    }
 
     return (
         <nav className="sticky top-0 z-999">
@@ -61,7 +65,7 @@ export default function Header() {
                     aria-label={open ? "Close dropdown menu" : "Open dropdown menu"}
                 >{open ? <X size={size} /> : <Menu size={size} />}</button>
             </header>
-            {open && <DropDown />}
+            {open && <DropDown onClick={closeHeader} />}
         </nav>
     )
 }

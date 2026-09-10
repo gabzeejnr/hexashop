@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "../components/Header/Header";
+import { AosProvider } from "../context/AosContext";
 import Footer from "../components/Footer/Footer";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -44,7 +45,9 @@ export default function RootLayout({ children }) {
         <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
             <body className="flex flex-col">
                 <Header />
-                {children}
+                <AosProvider>
+                    {children}
+                </AosProvider>
                 <Footer />
             </body>
         </html>
