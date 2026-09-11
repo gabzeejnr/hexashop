@@ -22,14 +22,14 @@ export default function Newsletter() {
 
     return (
         <section>
-            <div className="flex gap-4">
+            <div className="flex flex-col lg:flex-row gap-4">
                 <div className="flex-2 flex flex-col gap-4 justify-center">
                     <div className="flex flex-col gap-1">
                         <h3 className="font-bold text-[17px]"></h3>
                         <h1 className="text-[35px] font-bold">By Subscribing To Our Newsletter You Can Get 30% Off...</h1>
                         <span className="italic text-[15px] text-gray-500 ">Details to details is what makes Hexashop different from the other themes.</span>
                     </div>
-                    <form onSubmit={handleSubmit} className="italic text-[17px] font-medium flex gap-6">
+                    <form onSubmit={handleSubmit} className="italic text-[17px] font-medium flex flex-col sm:flex-row gap-6">
                         <div className="flex gap-5 w-4/5">
                             <input type="text" name="name" required placeholder="Your Name" className="border p-2 flex-1" />
                             <input type="email" name="email" required placeholder="Your Email" className="border p-2 flex-1" />
