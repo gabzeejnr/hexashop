@@ -12,7 +12,7 @@ export default function About() {
                 <Image src={leftImage} alt="About Left Image" className="w-full h-auto" />
             </div>
             <div className="right flex-1 flex flex-col justify-center">
-                <div className="mb-10 border-b">
+                <div className="mb-10 border-b-3 border-gray-500 border-dotted">
                     <h3 className="mb-10 text-4xl font-bold">About Us & Our Skills</h3>
                     <p className="text-gray-400 mb-4 font-semibold italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod kon tempor incididunt ut labore.</p>
                     <div className="quote flex gap-2 mb-4">

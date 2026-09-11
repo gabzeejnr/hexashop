@@ -7,7 +7,7 @@ import Button from "../components/Button";
 
 export default function Hero() {
     return (
-        <section className="flex flex-col lg:flex-row gap-10 lg:h-150 px-2 lg:px-10">
+        <section className="flex flex-col lg:flex-row gap-10 lg:h-150 px-2 lg:px-10" data-aos="fade-up">
             <div className="relative flex-1 flex items-center md:justify-center">
                 <Image src={leftBanner} alt="Main hero image" loading="eager" className="align-middle object-cover h-full" />
                 <div className="absolute text-center align-middle w-full text-white flex flex-col gap-3 justify-center items-center">

@@ -18,7 +18,7 @@ export default function SlideShow() {
                     if (initial === 0) return setInitial(i.length - 1);
                     return setInitial(p => p - 1);
                 }} />
-                <div className={`${styles["slide-show"]} gap-10 flex`}>
+                <div className={`${styles["slide-show"]} gap-10 flex`} data-aos="zoom-in">
                     {i.slice(initial, end).map((i, index) => (
                         <div key={(index * 19) + 1} className="slide flex h-80 max-w-80 border">
                             <Image src={i} alt="slides" className="object-cover" />
@@ -35,7 +35,7 @@ export default function SlideShow() {
                     if (initial === 0) return setInitial(i.length - 1);
                     return setInitial(p => p - 1);
                 }} />
-                <div className={`${styles["mobile-slide"]} block md:hidden h-80 max-w-100`}>
+                <div className={`${styles["mobile-slide"]} block md:hidden h-80 max-w-100`} data-aos="zoom-in">
                     <Image src={i[initial]} alt="Slide Show content" className="object-cover h-full w-auto" />
                 </div>
                 <Button value="&#x3e;" onClick={() => {
