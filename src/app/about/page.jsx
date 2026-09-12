@@ -18,16 +18,16 @@ export default function AboutPage() {
             <div id="top" className="h-100">
                 <Hero />
             </div>
-            <div className="px-2 lg:px-15 mt-30" data-aos="fade-up">
+            <div className="px-2 lg:px-15 mt-15 md:mt-30" data-aos="fade-up">
                 <About />
             </div>
-            <div className="mt-30 px-2 lg:px-15" data-aos="fade-up">
+            <div className="mt-15 md:mt-30 px-2 lg:px-15" data-aos="fade-up">
                 <Team />
             </div>
-            <div className="mt-30 px-2 lg:px-15" data-aos="fade-up">
+            <div className="mt-15 md:mt-30 px-2 lg:px-15" data-aos="fade-up">
                 <Services />
             </div>
-            <div className="mt-30 px-2 lg:px-15" data-aos="fade-up">
+            <div className="mt-15 md:mt-30 px-2 lg:px-15" data-aos="fade-up">
                 <Newsletter />
             </div>
         </main>

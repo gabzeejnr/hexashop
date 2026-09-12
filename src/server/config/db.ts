@@ -4,6 +4,7 @@ import { DATABASE_PORT } from "./env";
 import { Pool } from "pg";
 
 const pool = new Pool({
+    host: env.DATABASE_HOST,
     database: env.DATABASE,
     user: env.DATABASE_USER,
     password: env.DATABASE_PASSWORD,

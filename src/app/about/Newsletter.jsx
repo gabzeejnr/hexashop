@@ -26,11 +26,11 @@ export default function Newsletter() {
                 <div className="flex-2 flex flex-col gap-4 justify-center">
                     <div className="flex flex-col gap-1">
                         <h3 className="font-bold text-[17px]"></h3>
-                        <h1 className="text-[35px] font-bold">By Subscribing To Our Newsletter You Can Get 30% Off...</h1>
+                        <h1 className="text-[25px] md:text-[35px] font-bold">By Subscribing To Our Newsletter You Can Get 30% Off...</h1>
                         <span className="italic text-[15px] text-gray-500 ">Details to details is what makes Hexashop different from the other themes.</span>
                     </div>
-                    <form onSubmit={handleSubmit} className="italic text-[17px] font-medium flex flex-col sm:flex-row gap-6">
-                        <div className="flex flex-col border justify-center gap-5 lg:w-4/5">
+                    <form onSubmit={handleSubmit} className="italic md:text-[17px] font-medium flex flex-col sm:flex-row gap-6">
+                        <div className="flex flex-col justify-center gap-5 lg:w-4/5">
                             <input type="text" name="name" required placeholder="Your Name" className="border p-2 flex-1" />
                             <input type="email" name="email" required placeholder="Your Email" className="border p-2 flex-1" />
                         </div>
@@ -67,10 +67,10 @@ export default function Newsletter() {
                                 const isLast = i === sM.length - 1;
                                 const text = s.id.charAt(0).toUpperCase() + s.id.slice(1)
                                 return isLast
-                                    ? (<Link href={s.link}>
+                                    ? (<Link href={s.link} key={(i * 30) + 10}>
                                         <span>{text}</span>
                                     </Link>)
-                                    : (<Link href={s.link}>
+                                    : (<Link href={s.link} key={(i * 30) + 10}>
                                         <span>{text}, </span>
                                     </Link>)
                             })}
