@@ -19,13 +19,14 @@ export async function getProducts(
     search?: string | null
 ): Promise<ProductResponse | ErrorType> {
     try {
-        /* const { rows } = await pool.query("SELECT * FROM products");
+        const { rows } = await pool.query("SELECT * FROM products");
         if (!rows.length) return {
             error: "No products found.",
             status: 404
-        } */
+        }
 
-        const data = await readJSON<Product[]>("products");
+        /* const data = await readJSON<Product[]>("products"); */
+        const data = rows
 
         if (category) {
             const filterbyCategory = data.filter(dat => dat.category.includes(category));
@@ -130,7 +131,9 @@ export async function seedDatabase() {
 }
 
 export async function getCategories(): Promise<string[]> {
-    const dataData: Product[] = await readJSON("products");
+    const { rows } = await pool.query("SELECT * FROM products");
+    // const dataData: Product[] = await readJSON("products");
+    const dataData = rows;
     const data: string[] = []
     dataData.map(d => {
         for (const cat of d.category) {
