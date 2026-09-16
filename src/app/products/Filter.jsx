@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { getProducts, getCategories } from "../../server/products/product";
-import { Glasses } from "lucide-react";
 import FilterClient from "./FilterClient";
 
 function CategoryCard({ category }) {
@@ -15,11 +14,7 @@ function CategoryCard({ category }) {
 export default async function Filter() {
 
     const categories = await getCategories();
-    const products = await getProducts();
-
-    async function handleSearch(e) {
-        e.preventDefault()
-    }
+    const products = await getProducts({});
 
     return (
         <FilterClient categories={categories} products={products} />

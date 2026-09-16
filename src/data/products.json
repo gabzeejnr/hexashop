@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "slug": "nike-air-flex-runner",
     "source": "gabzeejnr",
     "name": "AirFlex Runner",
     "description": "Lightweight running sneakers designed for speed and comfort. Breathable mesh and durable sole.",
@@ -15,6 +16,7 @@
   },
   {
     "id": 2,
+    "slug": "urban-street-pro",
     "source": "gabzeejnr",
     "name": "Urban Street Pro",
     "description": "",
@@ -29,6 +31,7 @@
   },
   {
     "id": 3,
+    "slug": "classic-court-90-s",
     "source": "gabzeejnr",
     "name": "Classic Court 90s",
     "description": "",
@@ -44,6 +47,7 @@
   },
   {
     "id": 4,
+    "slug": "volt-edge",
     "source": "gabzeejnr",
     "name": "Volt Edge",
     "description": "",
@@ -58,6 +62,7 @@
   },
   {
     "id": 5,
+    "slug": "puma-zenith-flow",
     "source": "gabzeejnr",
     "name": "Zenith Flow",
     "description": "",
@@ -72,6 +77,7 @@
   },
   {
     "id": 6,
+    "slug": "nike-street-vibe-low",
     "source": "gabzeejnr",
     "name": "Street Vibe Low",
     "description": "",
@@ -86,6 +92,7 @@
   },
   {
     "id": 7,
+    "slug": "nova-horizon",
     "source": "gabzeejnr",
     "name": "Nova Horizon",
     "description": "",
@@ -100,6 +107,7 @@
   },
   {
     "id": 8,
+    "slug": "pulse-react",
     "source": "gabzeejnr",
     "name": "Pulse React",
     "description": "",
@@ -114,6 +122,7 @@
   },
   {
     "id": 9,
+    "slug": "core-street-retro",
     "source": "gabzeejnr",
     "name": "Core Street Retro",
     "description": "",
@@ -128,6 +137,7 @@
   },
   {
     "id": 10,
+    "slug": "aero-flex-lite",
     "source": "gabzeejnr",
     "name": "AeroFlex Lite",
     "description": "",

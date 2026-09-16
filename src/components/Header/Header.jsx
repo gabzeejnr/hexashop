@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Menu, X, ArrowUp, ArrowDown } from "lucide-react";
 import { brandLogo } from "../../data/companyData";
 import { li } from "./data";
-import styles from "./Header.module.css";
+import styles from "./Header.module.scss";
 
 function DropDown({ onClick }) {
 
@@ -54,7 +54,7 @@ export default function Header() {
                                 <button className={` ${styles["sub-drop-wrapper"]} inline-flex items-center gap-1 cursor-pointer`}>
                                     {l.title}<span>&darr;</span>
                                 </button>
-                                <div className={`${styles["sub-drop"]} absolute flex top-8 bg-background w-50 overflow-hidden flex-col text-black`}>
+                                <div className={`${styles["sub-drop"]} absolute hidden top-8 bg-background w-50 overflow-hidden flex-col text-black`}>
                                     {l.children.map((q, i) => <Link href={q.link} key={q.title} className={`py-1 px-3 ${!(i + 1 === l.children.length) ? "border-b" : ""}`}>
                                         <div className="hover:scale-105 hover:translate-x-5">{q.title}</div>
                                     </Link>)}

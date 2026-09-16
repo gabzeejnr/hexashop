@@ -1,5 +1,5 @@
 import Link from "next/link"
-import styles from "./Products.module.css";
+import styles from "./Products.module.scss";
 
 export default function Hero() {
     return (

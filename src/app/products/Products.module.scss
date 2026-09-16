@@ -1,0 +1,18 @@
+.hero {
+    background: url("../../assets/images/about/about-us-page-heading.jpg") center / cover no-repeat;
+}
+
+
+.product-holder {
+
+    &:hover {
+
+        .image-wrapper{
+            height: 100%;
+
+            .hover {
+                display: flex;
+            }
+        }
+    }
+}

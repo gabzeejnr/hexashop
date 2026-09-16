@@ -3,12 +3,14 @@
     animation: drop 200ms both;
 }
 
-.sub-drop{
-    display: none;
-}
-.sub-drop-wrapper:active .sub-drop {
-    display: block;
-    transform: scale(3);
+.sub-drop-wrapper {
+
+    &:hover {
+
+        .sub-drop {
+            display: flex;
+        }
+    }
 }
 
 @keyframes drop {

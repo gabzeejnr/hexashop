@@ -47,7 +47,7 @@ export default function FilterClient({ categories, products }) {
             <div className="py-2 flex gap-2 items-center overflow-auto px-4">
                 {categories.map(cat => (
                     <Link key={cat} href={`/products/category/${cat.toLowerCase()}`}
-                        className="p-1 px-2 border rounded-lg bg-black text-white text-sm">
+                        className="p-1 px-2 border w-fit rounded-lg bg-black text-white text-sm">
                         {cat}
                     </Link>
                 ))}
