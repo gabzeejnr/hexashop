@@ -1,8 +1,12 @@
+import { NextRequest } from "next/server";
 import { createProduct, getProducts } from "../../../server/products/product";
 
-export async function GET() {
-    const products = await getProducts();
-    console.log(Response.json(products))
+export async function GET(req: NextRequest) {
+    const category = req.nextUrl.searchParams.get("category");
+    // const limit = req.nextUrl.searchParams.get("limit");
+
+    const products = await getProducts(category);
+
     return Response.json(products)
 }
 

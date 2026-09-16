@@ -34,7 +34,7 @@ export default function Newsletter() {
                             <input type="text" name="name" required placeholder="Your Name" className="border p-2 flex-1" />
                             <input type="email" name="email" required placeholder="Your Email" className="border p-2 flex-1" />
                         </div>
-                        <Button type="submit" value="Send?" font="bold" className="hover:text-white hover:bg-black hover:border-black" />
+                        <Button type="submit" value="Send" font="bold" className="hover:text-white hover:bg-black hover:border-black h-fit place-self-center" />
                     </form>
                 </div>
                 <div className="flex-1 p-4 grid  md:grid-cols-2 gap-6">

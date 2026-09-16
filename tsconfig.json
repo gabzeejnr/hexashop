@@ -30,7 +30,7 @@
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/server/utils/functions.ts", "src/components/Button.tsx", "src/app/products/Pagination.tsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,18 +1,15 @@
 "use client";
-import { useEffect } from "react";
-import { navigateToTop } from "../utils/document.html";
+import { useGoToTopOnLoad } from "../hooks/load.hook";
 import Hero from "./hero";
 import SlideShow from "./SlideShow";
 
 export default function Home() {
 
-    useEffect(() => {
-        navigateToTop();
-    }, []);
+    useGoToTopOnLoad("")
 
     return (
         <main className="flex flex-col py-10">
-            <div id="top">
+            <div>
                 <Hero />
             </div>
             <div className="mt-30">

@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import nF from "../assets/images/error/error-bg.jpg"
@@ -11,7 +10,7 @@ export default function NotFound() {
 
     return (
         <main className="min-h-screen relative select-none bg-transparent flex flex-col justify-center items-center"
-        onDragStart={() => {return false}}>
+            onDragStart={() => { return false }}>
             <Image src={nF} alt="Not Found" fill className="absolute select-none" loading="eager" />
             <div className="z-10 flex flex-col items-center">
                 <div className="text-[100px] font-bold">404</div>

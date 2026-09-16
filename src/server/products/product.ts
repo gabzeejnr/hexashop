@@ -1,31 +1,98 @@
 import pool from "../config/db";
 import { seed } from "./seed";
-import type { CreateProduct } from "../types/products.types";
+import { readJSON } from "../utils/json";
+import { removeArrayDuplicates } from "../utils/functions";
+import type { ErrorType } from "../types/global.types";
+import type { CreateProduct, Product } from "../types/products.types";
 
-export async function getProducts() {
-    try {
-        const { rows } = await pool.query("SELECT * FROM products");
-        if (rows.length <= 0) return { error: "No products found." }
-
-        return {
-            message: "Request successful.",
-            rows
-        }
-    } catch (err) {
-        console.log("Error completing request:", err)
-        return { error: "Internal server error." }
+type ProductResponse = {
+    data: Product[],
+    meta: {
+        message: string,
+        endpoint: string,
+        status: number
     }
 }
 
-export async function createProduct(data: CreateProduct) {
+export async function getProducts(
+    category?: string | null,
+    search?: string | null
+): Promise<ProductResponse | ErrorType> {
+    try {
+        /* const { rows } = await pool.query("SELECT * FROM products");
+        if (!rows.length) return {
+            error: "No products found.",
+            status: 404
+        } */
+
+        const data = await readJSON<Product[]>("products");
+
+        if (category) {
+            const filterbyCategory = data.filter(dat => dat.category.includes(category));
+            return {
+                data: filterbyCategory,
+                meta: {
+                    message: "Request successful...",
+                    endpoint: `products?category=${category}`,
+                    status: 200
+                }
+            }
+        }
+
+        if (search) {
+            const filterSearch = data.filter(dat => dat.name
+                .toLowerCase()
+                .includes(search.toLowerCase())
+            );
+            return {
+                data: filterSearch,
+                meta: {
+                    message: "Request successful...",
+                    endpoint: `products?search=${search}`,
+                    status: 200
+                }
+            }
+        }
+
+        return {
+            data: data,
+            meta: {
+                message: "Request successful...",
+                endpoint: "products",
+                status: 200
+            }
+        }
+    } catch (err) {
+        console.log("Error completing request:", err)
+        return {
+            error: "Internal server error.",
+            status: 500
+        }
+    }
+}
+
+export async function createProduct(data: CreateProduct): Promise<
+    {
+        message: string,
+        rows?: unknown,
+        status: number
+    } | ErrorType
+> {
     try {
         const { name, price } = data;
 
         const { rows } = await pool.query("INSERT INTO products (name, price) VALUES($1, $2) RETURNING *", [name, price]);
-        return rows[0];
+        return {
+            message: "Product created successfully.",
+            rows,
+            status: 201
+        }
     } catch (err) {
         console.error("Error adding product:", err);
-        return { error: "Failed to add product." }
+        return {
+            error: "Failed to add product.",
+            status: 500
+        }
     }
 }
 
@@ -60,4 +127,16 @@ export async function seedDatabase() {
         console.error("Couldn't seed the database:", err);
         return { erorr: "Internal server error." }
     }
+}
+
+export async function getCategories(): Promise<string[]> {
+    const dataData: Product[] = await readJSON("products");
+    const data: string[] = []
+    dataData.map(d => {
+        for (const cat of d.category) {
+            data.push(cat)
+        }
+    })
+    data.sort((a: string, b: string) => a.localeCompare(b))
+    return removeArrayDuplicates(data);
 }

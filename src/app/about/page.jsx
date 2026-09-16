@@ -1,21 +1,18 @@
 "use client"
-import { useEffect } from "react";
 import Hero from "./Hero";
 import About from "./About";
 import Team from "./Team";
 import Services from "./Services";
 import Newsletter from "./Newsletter";
-import { navigateToTop } from "../../utils/document.html";
+import { useGoToTopOnLoad } from "../../hooks/load.hook";
 
 export default function AboutPage() {
 
-    useEffect(() => {
-        navigateToTop("about")
-    }, []);
+    useGoToTopOnLoad("about");
 
     return (
         <main className="min-h-screen py-10">
-            <div id="top" className="h-100">
+            <div className="h-100">
                 <Hero />
             </div>
             <div className="px-2 lg:px-15 mt-15 md:mt-30" data-aos="fade-up">
