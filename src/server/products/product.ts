@@ -22,15 +22,15 @@ export async function getProducts({
     slug?: string
 }): Promise<ProductResponse | ErrorType> {
     try {
-        /* const { rows } = await pool.query("SELECT * FROM products");
+        const { rows } = await pool.query("SELECT * FROM products");
         if (!rows.length) return {
             error: "No products found.",
             status: 404
-        } */
+        }
 
-        const data = await readJSON<Product[]>("products");
+        // const data = await readJSON<Product[]>("products");
         const message = "Request successful..."
-        // const data = rows
+        const data = rows
 
         if (category) {
             const filterbyCategory = data.filter(dat => dat.category.includes(category));
@@ -148,9 +148,9 @@ export async function seedDatabase() {
 }
 
 export async function getCategories(): Promise<string[]> {
-    // const { rows } = await pool.query("SELECT * FROM products");
-    const dataData: Product[] = await readJSON("products");
-    // const dataData = rows;
+    const { rows } = await pool.query("SELECT * FROM products");
+    // const dataData: Product[] = await readJSON("products");
+    const dataData = rows;
     const data: string[] = []
     dataData.map(d => {
         for (const cat of d.category) {
